@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    font-family: "Montserrat", serif !important;
+}
+/* antd override */
+input{
+    border-radius: 2px !important;
+    border: 1px solid rgba(128,128,128,0.521) !important;
+    height:40px !important;
+}
+input:focus,.ant-picker{
+    outline: none !important;
+    box-shadow: none !important;
+    border: 1px solid grey !important;
+}
+label{
+    font-size: 16px !important;
+    color: black !important;
+}
+.ant-form-item{
+    margin: 10px 0 !important;
+    border: black !important;
+    border-radius: 10px !important;
+    
+}
+.ant-picker-input input{
+    border:none !important;
+}
+.ant-picker{
+    border-radius: 2px !important;
+    border: 1px solid rgba(128,128,128,0.521) !important;
+    height:40px !important;
+}
+.spinner-parent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.8;
+    background-color: rgba(0, 0, 0, 0.695);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 9999;
+}
+.spinner-border{
+    width: 5rem;
+    height: 5rem;
+    color:white !important;
+}
+.page-title{
+    font-size: 25px;
+    color:rgba(0, 0, 0, 0.797);
+    font-weight: bold;
+}
+.card-title{
+    font-size: 22px;
+    font-weight: bold;
+    color: rgba(105, 105, 105, 0.999);
+    
+}
+.normal-text{
+    font-size: 1rem;
+}
+.card{
+    box-shadow: 0 0 2px grey;
+
+}
+.primary-button{
+    background-color:  rgb(0, 89, 111);
+    border-color:  rgb(0, 89, 111);
+    width: 100% !important;
+    align-self: center !important;
+    font-size: 16px;
+     
+}
+.submit{
+    background-color:  rgb(0, 89, 111);
+    border-color:  rgb(0, 89, 111);
+    align-self: center !important;
+    font-size: 16px;
+    width: max-content;
+}
+.bitlogo{
+    margin-left: 80px;
+}
+.anchor{
+    color: black !important;
+    text-decoration: underline !important;
+    font-size: 16px !important;
+}
+.anchor:hover{
+    text-decoration: underline !important;
+}
+
+.authentication{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightblue;
+}
+.authentication-form{
+    width: 400px;
+    
+    
+}
+.authentication .card-title{
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: orangered;
+    color: white !important;
+    max-width: max-content !important;
+    padding: 7px 15px;
+    margin-left: -40px;
+    border-bottom-left-radius: 10px;
+    
+}
