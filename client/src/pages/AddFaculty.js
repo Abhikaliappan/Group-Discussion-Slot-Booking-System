@@ -1,31 +1,34 @@
 import React from 'react';
 import Layout from '../components/Layout';
-import { Form, Input, Row, Col, Button, TimePicker, DatePicker } from 'antd';
+import { Form, Input, Row, Col, Button, TimePicker, DatePicker, message } from 'antd';
+import axios from 'axios';
 
 function AddFaculty() {
-    const [form] = Form.useForm();  // Use form instance to reset it
+    const [form] = Form.useForm();  
 
-    const onFinish = values => {
-        console.log('Success:', values);
-
-        // Format date and time for storage
-        const formattedValues = {
-            ...values,
-            date: values.date.format('YYYY-MM-DD'), // Format date
-            timings: values.timings.map(time => time.format('HH:mm')), // Format time range
-        };
-
-        // Get existing faculty data from local storage
-        const existingFaculties = JSON.parse(localStorage.getItem('faculties')) || [];
-        
-        // Add new faculty to the list
-        const updatedFaculties = [...existingFaculties, formattedValues];
-
-        // Store updated faculty list in local storage
-        localStorage.setItem('faculties', JSON.stringify(updatedFaculties));
-
-        // Reset form fields
-        form.resetFields();
+    const onFinish = async (values) => {
+        try {
+            const formattedValues = {
+                firstName: values.firstName,
+                lastName: values.lastName,
+                phoneNumber: values.phoneNumber,
+                department: values.department,
+                designation: values.designation,
+                date: values.date.format('YYYY-MM-DD'), // Ensure date is optional
+                timings: values.timings.map(time => time.format('HH:mm')), // Ensure timings is optional
+            };
+    
+            const response = await axios.post('/api/faculties/add', formattedValues);
+    
+            if (response.data.success) {
+                message.success("Faculty added successfully");
+                form.resetFields();
+            } else {
+                message.error(response.data.message);
+            }
+        } catch (error) {
+            message.error("Failed to add faculty");
+        }
     };
 
     return (

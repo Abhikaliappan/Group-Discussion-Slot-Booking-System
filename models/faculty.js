@@ -14,7 +14,7 @@ const facultySchema = new mongoose.Schema;(
         required: true,
     },
     phoneNumber:{
-        typr: String,
+        type: String,
         required: true,
     },
     department: {
